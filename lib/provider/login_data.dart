@@ -10,5 +10,4 @@ class LoginData with ChangeNotifier {
     password = newPassword;
     notifyListeners();
   }
-
 }

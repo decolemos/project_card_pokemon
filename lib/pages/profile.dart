@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_card_pokemon/provider/login_data.dart';
+import 'package:provider/provider.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -19,7 +21,8 @@ class ProfilePage extends StatelessWidget {
               width: 200,
               height: 150,
               child: Image.asset('assets/login.png')
-            )
+            ),
+            Text(Provider.of<LoginData>(context, listen: false).user),
           ],
         ),
       ),

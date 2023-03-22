@@ -1,6 +1,8 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:project_card_pokemon/provider/login_data.dart';
+import 'package:provider/provider.dart';
 
 class FormLogin extends StatefulWidget {
   const FormLogin({super.key});
@@ -75,7 +77,7 @@ class _FormLoginState extends State<FormLogin> {
               onPressed: () {
                 if(_formkey.currentState!.validate()) {
                   _formkey.currentState?.save();
-                  printUser();
+                  (Provider.of<LoginData>(context, listen: false).saveLogin(user, password));
                   Navigator.pushNamed(context, '/profile');
                 }
               },
